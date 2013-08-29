@@ -1,0 +1,48 @@
+input[type="checkbox"]  + label:before { display:none; }
+
+/*input[type="checkbox"]  + label:before { z-index:100; left:0; position:absolute; }
+:checked  + label:before,
+input[checked="checked"] + label:before { background:#e21005; } */
+
+
+#topLogo, #topLogo img { background-color:#ededed;}
+.home #topLogo, .home #topLogo img { background-color:transparent;}
+input[type="checkbox"] { display:inline-block !important; }
+.modal .modalOption label,
+#typeModal span label { display:inline; }
+
+.lt-ie8 #topNav li { float:left; display:block; }
+.lt-ie8 #topNav #primary > li > a, .lt-ie8 #topNav #secondary > li > a { padding-right:10px; padding-left:10px; }
+.lt-ie8 .savedListBar, .lt-ie8 .searchBar { display:block; float:right; clear:both; width:auto; max-width:220px; }
+.lt-ie8 #shopSubNav li { display:inline; }
+
+#typeModal span { display:block; }
+#typeModal a span { display:inline; }
+
+.filterModal { max-width:715px; }
+#designerModal { max-width:630px; right:0px;}
+
+.selectFilter .count { position:absolute; right:0; top:5px; display:inline;}
+
+.search_input, search_input > * { line-height:25px; padding-top:0; padding-bottom:0; vertical-align:middle; }
+
+ul#productFilters { max-width:715px; }
+
+#productFilters .filter { text-align:left; padding-left:0; margin-left:0; }
+
+/*position:absolute; left:0; }*/
+
+#req { display:block; clear:both; float:none; width:100%;
+  font-size:11px; font-family: 'proxima-nova-n4', 'proxima-nova', 'Century Gothic', sans-serif;
+  text-transform:uppercase; font-style:normal;
+  margin:0 0 2px; }
+input[type="checkbox"] + label { padding-left:0; }
+
+.productOverlay { visibility:hidden; }
+.product a:hover .productOverlay,
+.relatedThumb:hover .productOverlay { visibility: visible;}
+
+
+
+/*input[type="checkbox"] { appearance:none; -ms-appearance:none; border:1px solid; box-shadow:none; background:#fff; }
+input:checked { background:#e21005;}*/

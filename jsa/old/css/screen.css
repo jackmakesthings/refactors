@@ -1,0 +1,2117 @@
+@font-face {
+  font-family: 'icons';
+  src:url('fonts/v6/icomoon.eot');
+  src:url('fonts/v6/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/v6/icomoon.woff') format('woff'),
+    url('fonts/v6/icomoon.ttf') format('truetype'),
+    url('fonts/v6/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+  font-family: 'icons';
+  src: url('fonts/v5/icomoon.svg#icomoon') format('svg');
+  }
+}*/
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icons';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-icon="M"]:before { font-size:95%; }
+/* {{{ reset */
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+ 	margin: 0; padding: 0;
+    font-size: 100%; font-weight: inherit;
+    font-style: normal;
+    border: 0;
+    font-family: "proxima-nova-n4", "proxima-nova", "Century Gothic", sans-serif;
+    outline: 0;
+    vertical-align: baseline;
+	}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after { content: "" }
+
+a:hover { color: #d00 }
+
+a img { border: 0 }
+
+:focus { outline: 0; }
+
+	:focus + .customSelect {
+	    color: #222;
+	    background-position: right bottom;
+	    border-color: #bbb;
+	    box-shadow: 0 0 3px 1px #ddd inset;
+		}
+
+body {
+    background: #fff;
+    line-height: 1;
+	}
+
+ol, ul { list-style: none }
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+	}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left
+	}
+
+blockquote, q { quotes: "" "" }
+
+a {
+    text-decoration: none;
+    /*-moz-transition: 0.2s linear all;;
+    -webkit-transition: 0.2s linear all;
+    transition: 0.2s linear all;*/
+	}
+
+blockquote{
+    padding:20px;
+    /*background-color:white;*/
+    margin-top:10px;
+}
+.aboutWrapper blockquote p{
+    margin:0 0 0 15px;
+    font-size:16px;
+    font-style:italic;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+
+/* }}} */
+
+/* {{{ helper classes */
+
+.chromeframe {
+    margin: 0.2em 0; padding: 0.2em 0;
+    color: black;
+    background: #ccc
+	}
+
+.ir {
+    display: block;
+    background-color: transparent;
+    text-align: left; text-indent: -999em;
+    border: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    direction: ltr;
+    *line-height: 0;
+	}
+
+	.ir br { display: none }
+
+.hidden {
+    display: none !important;
+    visibility: hidden
+	}
+
+.group:after {
+    display: table;
+    content: ""
+	}
+
+.clearfix { *zoom: 1 }
+
+.talignLeft { text-align: left }
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: ""
+	}
+
+.clearfix:after { clear: both }
+
+.talignRight { text-align: right }
+
+.talignCenter { text-align: center }
+
+.floatLeft {
+    float: left;
+    margin-right: 10px;
+    clear: none
+	}
+
+.floatRight {
+    float: right;
+    margin-right: 10px;
+    clear: none
+	}
+
+.center {
+    float: none;
+    margin: auto;
+    clear: both
+	}
+
+/* ===
+grid classes
+=== */
+
+.gridWrapper {
+    width: 958px;
+    margin: auto; padding: 0
+	}
+
+.quarterCol, .midCol,
+.subNav .quarterCol, .subNav .midCol {
+    display: block; float: left;
+    width: 232px;
+    margin-right: 10px
+	}
+
+	.midCol { min-width:340px !important;}
+
+/* }}} */
+
+/* {{{ ground rules */
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+
+.button {
+    color: #222;
+    background: #fff;
+    -moz-transition: 0.2s linear all;
+    -webkit-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+	}
+
+.button:hover {
+    color: #fff;
+    background: #e21005
+	}
+
+.button span {
+    position: relative;
+    top: 1px;
+    color: #222;
+	}
+
+	.button:hover span { color: #fff }
+
+.break {
+    position: relative; display: block;
+    top: -130px;
+    width: 595px; height: 150px;
+    border-bottom: 1px solid #fff;
+    clear: both;
+    z-index: 1;
+    background: #ededed;
+	}
+
+input[type="checkbox"] { display: none; }
+
+	input[type="checkbox"] + label {
+	    position: relative; display: block;
+	    min-width: 80%;
+	    padding: 4px 1em 4px 2em;
+	    cursor:pointer;
+	    -moz-transition:color linear 0.3s;
+	    -webkit-transition:color linear 0.3s;
+	    transition:color linear 0.3s;
+		}
+
+	input[type="checkbox"] + label:hover { color: #7c7c7c;}
+	input[type="checkbox"] + label:focus { color: #7c7c7c;}
+	input[type="checkbox"] + label:active { color: #e21005;}
+
+	input[type="checkbox"]  + label:before {
+	    position: absolute; display: block;
+	    top: 2px; left: 0;
+	    width: 1em; height: 1em;
+	    margin-right: 1em;
+	    content: '';
+	    border: 1px solid #ccc;
+	    background:#fff;
+		}
+
+	input[type="checkbox"]:checked + label:before,
+	:checked + label:before {
+	    background: #e21005;
+	    border-color: #e21005;
+		}
+
+/* }}} */
+
+/* {{{ container */
+
+html {
+    /*position: static;*/
+    width: 100%;
+    min-height: 100%; height: auto
+	}
+
+body {
+    /*min-width: 958px; */
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    font-size: 11px;
+    text-transform: uppercase;
+    background: #EDEDED;
+    font-family: "proxima-nova-n4","proxima-nova", "Century Gothic", sans-serif;
+	}
+
+#container {
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%;
+    margin: auto;
+    background: url('/img/JSB-footer-logo-27.png') no-repeat 0 100% transparent;
+	}
+
+#header,
+#main {
+    width: 958px;
+    margin: auto;
+    clear: both;
+	}
+
+	#header {
+	    height: 45px;
+	    z-index: 700;
+	    position: relative }
+
+#main { padding-top: 0 }
+
+#container {
+    width: 958px;
+    margin: auto
+	}
+
+	.home #header {
+	    /*position: relative;*/
+	    overflow: visible !important;
+      position:absolute;
+      left:0;
+      right:0
+		}
+
+	.home #topNav,
+	.home #topLogo { display: none }
+
+		.home #topLogo img {
+		    width: 280px;
+		    margin-top: 0
+			}
+
+.home #container {
+    width: 100%;
+    background: none
+	}
+
+.home .slideImages { display: none }
+
+.home #footer,
+.home .searchBar,
+.home .savedListBar { display: none }
+
+#slideshow .jFill-slide {
+    position: absolute;
+    top: 0; left: 0
+	}
+
+.home #main {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 960px;
+    margin: auto;
+    overflow-y: hidden
+	}
+
+#enter {
+    position: absolute;
+    right: 0;
+    margin-left: -230px
+	}
+
+.loading {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: url('images/ajax-loader.gif') no-repeat center center transparent;
+    opacity: 0.8;
+    z-index: 1;
+	}
+
+#cover-wrap { position:absolute; left:0; right:0; top:0; bottom:0; visibility:hidden; z-index:-1 }
+#cover-wrap.visibleWrap { visibility:visible; z-index:500;}
+
+.home .cover {
+  background-color:#ededed;
+  display:block;
+  width:100%; height:50%;
+  position:absolute;
+  left:0; right:0;
+  background-repeat:no-repeat;
+  overflow:hidden;
+  text-align:center;
+  -moz-transition:0.5s ease;
+  -moz-transition-property:background-color;
+  -webkit-transition:0.5s ease;
+  -webkit-transition-property:background-color;
+  transition:0.5s ease;
+  transition-property:background-color;
+  }
+
+  .home .visibleWrap .cover { background-color: #e21005; }
+
+  .home #top {
+    top:0;
+    }
+  .home #bottom {
+    bottom:0;
+   }
+
+  .home .cover img { position:absolute; left:0; right:0; width:auto; }
+
+  .home #top img {
+    margin:0 auto 0;
+    margin-top:-34px;
+    }
+
+  .home #bottom img {
+     margin:0 auto;
+     margin-bottom:-34px;
+  }
+
+/* }}} */
+
+/* {{{ top logo
+=======================================
+top logo
+=======================================
+*/
+#topLogo {
+	position:absolute;
+	top:0;
+	left:0;
+	width:232px;
+	height:45px;
+	line-height:55px;
+	z-index:100;
+	background:#ededed;
+	background:rgba(236, 236, 236, 0.95)
+}
+
+#topLogo img { margin-top:8px; width:207px; height:auto; }
+
+.home #topLogo { background:none; }
+.home #topLogo img { margin-top:0; width:280px; }
+
+.home #topLogo { background: none }
+
+/* }}} */
+
+/* {{{ Nav
+=======================================
+NAV
+=======================================
+*/
+
+#topNav {
+    position: absolute;
+    right: 0;
+    width: 716px;
+    color: #fff;
+    font-size: 10px;
+    text-align: center; text-transform: uppercase;
+    z-index: 100;
+	}
+
+	#topNav .subMenu .last a {	 padding-bottom: 10px }
+
+	#topNav .current > a {
+	    color: #222;
+	    font-weight: 600
+		}
+
+	#topNav .subMenu li {
+	    display: block;
+	    list-style: none
+		}
+
+	#topNav #secondary {
+	    width: 140px;
+	    border-left: 1px solid #DF4641; border-left: 1px solid #F06661
+		}
+
+	#topNav .subMenu a {
+	    display: block;
+	    min-width: 14em;
+	    padding: 5px 20px 5px 20px;
+	    color: #222;
+	    font-size: 11px;
+	    text-align: left; text-decoration: none; text-transform: capitalize;
+	    letter-spacing: 0;
+	    line-height: 1.5;
+		}
+
+	#topNav .subMenu a:hover {
+	    color: #fff;
+	    background: #e21005
+		}
+
+	#topNav #primary {	 width: 575px }
+
+	#topNav .sep {
+	    display: block; float: left;
+	    width: 1px; height: 40px;
+	    margin-left: 5px;
+	    background: #DB7777;
+		}
+
+	#topNav > ul {
+	    display: table; float: left;
+	    background: #e21005;
+	    background: rgba(226, 16, 5, 0.9);
+		}
+
+	#topNav li {
+	    position: relative; display: table-cell;
+	    width: auto
+		-moz-transition:0.3s all 0.2s;
+		-webkit-transition:0.3s all 0.2s;
+		transition:0.3s all 0.2s;
+		}
+
+	#topNav li:hover .subMenu {	display: block; }
+
+	#topNav li .subMenu {
+	    position: absolute;
+	    display: none;
+			-moz-transition:0.2s all 0.2s;
+		-webkit-transition:0.2s all 0.2s;
+		transition:0.2s all 0.2s; 
+	    width: auto;
+	    background: #fff;
+	    /*z-index: 200;*/
+		}
+
+/*		.csstransitions #topNav { height:45px; overflow:hidden; }
+		.csstransitions #topNav:hover { overflow:visible; }
+		.csstransitions #topNav li .subMenu,
+		.csstransitions #topNav li .subMenu li { 
+			display:block; opacity:0; 		
+			-moz-transition:0.2s all 0.2s;
+		-webkit-transition:0.2s all 0.2s;
+		transition:0.2s all 0.2s; }
+		.csstransitions #topNav li:hover .subMenu,
+		.csstransitions #topNav li:hover .subMenu li { opacity:1; height:auto; }*/
+		.is-sticky #productSorting:hover { z-index:250;}
+
+
+
+
+	#topNav a:hover,
+	#topNav li:hover a {
+	    color: #222;
+	    background: white
+		}
+
+	#topNav a {
+	    position: relative; display: block;
+	    width: 100%; height: 100%;
+	    color: #fff;
+	    text-decoration: none;
+	    letter-spacing: 1px;
+	    line-height: 45px;
+		}
+
+.navTab { display:none; height:0; width:0; }
+
+/* }}} */
+
+/* {{{ Search Bar */
+
+.searchBar {
+    width: 100%;
+    padding: 10px 0; padding: 10px 0 10px;
+    text-align: right;
+    clear: both
+	}
+
+	.searchBar #search_submit,
+	#searchInner #search_submit {
+	    position: relative; display: block; float: right;
+	    width: 23px; height: 25px !important;
+	    border-left: 1px solid #ededed;
+	    overflow: hidden;
+	    font-family: 'icons' !important;
+	    border: none;
+	    line-height: 1;
+	    vertical-align: top;
+		}
+
+	.searchBar #search_submit:hover {
+	    color: #fff;
+	    background: #e21005;
+	    cursor: pointer;
+		}
+
+	.searchBar input,
+	#searchInner input {
+	    padding: 6px;
+	    font-size: 9px; font-weight: normal;
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	    font-family: 'proxima-nova-n4','proxima-nova', sans-serif !important;
+	    border: none;
+		}
+
+	.searchBar .text,
+	#searchInner .text {
+	    float: left;
+	    width: 180px; height: 25px;
+	    padding: 0 0 0 8px;
+	    font-size: 10px;
+	    border: none;
+	    vertical-align: top;
+		}
+
+.searchBox {
+    display: inline-block;
+    text-align: left;
+    overflow: hidden
+	}
+
+
+.searchBar .text, #searchInner .text, .searchBar #search_submit, #searchInner #search_submit, .aboutWrapper .submit {
+  appearance:none;
+-webkit-appearance:none;
+-webkit-border-radius:0 !important;
+   -moz-border-radius:0 !important;
+        border-radius:0 !important;
+background-image:none;
+-webkit-box-shadow:none;
+   -moz-box-shadow:none;
+        box-shadow:none;
+}
+
+
+#productSorting a.select-all {
+    display: inline;
+    margin-left: 1em;
+    padding: 0;
+    color: #aaa;
+    border-bottom: 1px solid;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0
+	}
+
+#productSorting .select-all:hover { color: #E21005 }
+
+.tertiaries {
+    position: relative; display: none;
+    top: -2px; left: 2em
+	}
+
+	.tertiaries span:first-child {
+	    font-weight: 400 !important;
+	    font-family: "proxima-nova-n4", "proxima-nova"
+		}
+
+    #alt-showing { display:none; }
+
+    .ui-autocomplete { z-index:999 !important;}
+
+#designerModal .col { padding-bottom: 0 }
+
+.modalOption {
+    display: block;
+    margin-bottom: 3px
+	}
+
+  #designerModal .cols { display:block; }
+  #designerModal .modalOption {
+    display:inline-block;
+    width:205px;
+  }
+
+.modal label {
+    font-size: 12px;
+    font-family: "proxima-nova-n3", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+#typeModal {
+    width: 270px;
+    text-transform: none;
+    line-height: 1.1
+	}
+
+.catModal .col span:first-child {
+    font-weight: 600;
+    font-family: "proxima-nova-n6", "proxima-nova"
+	}
+
+/* }}} */
+
+/* {{{ Saved List */
+
+.savedListBar {
+    width: 100%;
+    text-align: right;
+    clear: both
+	}
+
+.savedListBox {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 9px;
+    text-align: left;
+    letter-spacing: 1px;
+    background: white
+	}
+
+	.savedListBox span {
+	    top: 0;
+	    padding-left: 10px;
+	    color: #aaa;
+	    font-size: 8px
+		}
+
+	.savedListBox a {
+	    display: block;
+	    padding: 0 10px;
+	    line-height: 25px
+		}
+
+.imgBox {
+    float: left;
+    width: 232px; height: 232px;
+    text-align: center;
+    background: #fff
+	}
+
+/* }}} */
+
+/* {{{ Saved List View
+================================
+SAVED LIST VIEW
+================================== */
+
+.itemsCount {
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px 0 10px;
+    border-bottom: 1px solid #fff
+	}
+
+.savedItemBox {
+    width: 960px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #fff;
+    font-size: 14px;
+    text-transform: none;
+    background: #EDEDED;
+	}
+
+	.savedItemBox .productDetails span {
+	    font-weight: normal;
+	    font-style: italic;
+	    font-family: "proxima-nova-i4", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+	.savedItemBox .productDescription,
+	.savedItemBox .productDesigner {
+	    float: right;
+	    width: 180px;
+	    font-size: 13px;
+	    text-align: left;
+	    clear: right;
+	    line-height: 23px;
+		}
+
+	.savedItemBox .productDescription {	 margin-bottom: 20px }
+
+	.savedItemBox .infoColumn {
+	    display: inline-block;
+	    min-height: 252px;
+	    padding: 0 15px;
+	    vertical-align: top
+		}
+
+	.savedItemBox .itemNumber {
+	    margin: 10px 0;
+	    font-size: 12px;
+	    text-transform: none
+		}
+
+	.savedItemBox .col1 {
+	    width: 450px;
+	    padding-left: 0
+		}
+
+	.savedItemBox .col2 {
+	    width: 265px;
+	    font-size: 12px;
+	    border: 1px solid #f4f4f4;
+	    border-style: none solid;
+	    line-height: 1.7;
+		}
+
+		.emailLocation { display:none; }
+		.locInfo { border:none; }
+
+		.savedItemBox .detailBlock { 
+			padding:0 0 0 5.8em; 
+			line-height:1.7 }
+
+		.savedItemBox .locPhone { margin-left:4.7em; }
+
+	.savedItemBox .col3 {	 width: 220px }
+
+	.savedItemBox img {
+	    float: left;
+	    margin-right: 30px
+		}
+
+	.savedItemBox h2 {
+	    margin-bottom: 10px;
+	    font-size: 16px;
+	    text-transform: uppercase;
+	    letter-spacing: 2px
+		}
+
+		.savedItemBox h2 span {
+		    font-size: 14px;
+		    text-transform: none;
+		    letter-spacing: 1px
+			}
+
+	.listImage,
+	.savedItemBox img {
+	    float: none !important;
+	    max-width: 232px; max-height: 232px;
+	    margin: auto !important
+		}
+
+	.savedItemBox .savedItemTitle:hover {	 color: #e21005 }
+
+	.savedItemBox .savedItemTitle,
+	.savedItemBox .savedItemTitle:visited {	 color: #222 }
+
+.unlistButton,
+.contactButton {
+    position: relative;
+    width: 22em;
+    margin-bottom: 10px;
+    text-align: right;
+    line-height: 25px
+	}
+
+	.unlistButton span,
+	.contactButton span {
+	    position: relative;
+	    top: 1px; right: -4px;
+	    color: #BBB;
+	    font-size: 13px
+		}
+
+	.contactButton span {	 padding-left: 4px }
+
+.button {
+    display: inline-block;
+    margin-left: 0;
+    padding: 0 10px;
+    font-size: 10px;
+    text-decoration: none; text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 2.5;
+    background: white;
+    border: none;
+	}
+
+.purchaseButton span {
+    position: relative;
+    top: 1px; right: -4px;
+    color: #BBB;
+    font-size: 13px;
+    border-spacing: 0
+	}
+
+.purchaseButton:hover span { color: #fff }
+
+.unlistButton,
+.contactButton {
+    position: relative;
+    width: 22em;
+    margin-bottom: 10px;
+    text-align: right;
+    line-height: 25px
+	}
+
+.listActions { text-align: right }
+
+	.listActions .button {	 margin-bottom: 10px }
+
+	.listActions .button:hover span {	 color: #fff }
+
+	.listActions .button span {
+	    left: 2px;
+	    color: #bbb;
+	    font-size: 13px;
+	    line-height: 1;
+	    vertical-align: middle;
+		}
+
+.productDetails {
+    font-weight: bold;
+    font-family: "proxima-nova-n7", "proxima-nova", "Century Gothic", sans-serif;
+    line-height: 23px;
+	}
+
+.productDesigner {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: "proxima-nova-n7", "proxima-nova", "Century Gothic", sans-serif;
+    line-height: 2;
+	}
+
+	.productDesigner span,
+	.productInfo span {
+	    font-weight: normal;
+	    font-style: italic;
+	    text-transform: none;
+	    font-family: "proxima-nova-i4", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+.purchasingInfo p {
+    margin-top: 1em;
+    font-size: 11.5px
+	}
+
+/* }}} */
+
+/* {{{ Page Header
+=======================================
+PAGE HEADER
+=======================================
+*/
+
+.pageHeader {
+    position: relative;
+	}
+
+	.pageHeader h1 {
+	    font-size: 38px; font-weight: 100;
+	    letter-spacing: 4px;
+	    font-family: "proxima-nova-n1", "proxima-nova", "Century Gothic", sans-serif;
+		}
+
+		.pageHeader h1 a { color: #222 }
+
+		.pageHeader h1 a:hover { color: #e21005 }
+
+
+/* }}} */
+
+/* {{{ About Us Pages
+=======================================
+ABOUT US PAGES
+=======================================
+*/
+
+.aboutWrapper .col2 {
+    display: table;
+    width: 100%;
+    clear: both
+	}
+
+.aboutWrapper .col {
+    display: table-cell;
+    padding: 2em;
+    vertical-align: top
+	}
+
+.aboutWrapper .lCol { width: 360px }
+
+.aboutWrapper p {
+    margin-bottom: 1.5em;
+    color: #555;
+    font-size: 15px;
+    text-transform: none;
+    line-height: 1.6
+	}
+
+.aboutWrapper .highlight {
+    font-size: 20px;
+    font-style: italic
+	}
+
+.aboutWrapper strong {
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-family: "proxima-nova-n7", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+.aboutWrapper h1 {
+    font-size: 24px; font-weight: bold;
+    text-transform: none;
+    line-height: 36px;
+    font-family: "proxima-nova-n7", "proxima-nova", "Century Gothic", sans-serif;
+	}
+
+.aboutWrapper .pressCol {
+    display: block; float: left
+	}
+
+.view-all-testimonials{
+    position:absolute;
+    right:80px;
+    bottom:25px;
+}
+.view-all-testimonials a{
+    color:#999;
+    font-size:12px;
+}
+/* }}} */
+
+/* {{{ Contact Page
+=======================
+CONTACT PAGE
+================================
+*/
+
+.col1-3 { width: 33% }
+.col1-2 { width: 50% }
+
+.aboutWrapper .error-notice {
+    margin-bottom: 5px;
+    color: red;
+    letter-spacing:1px;
+	}
+
+legend {
+	color:#999;
+	font-size:11px;
+	letter-spacing:1px;
+	line-height:1.8;
+}
+
+.aboutWrapper input[type="text"],
+.aboutWrapper select,
+.aboutWrapper textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 6px 8px 6px 18px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    font-family: 'proxima-nova';
+	}
+
+.aboutWrapper .text:focus,
+.aboutWrapper textarea:focus,
+.aboutWrapper select:focus,
+.customSelect:focus {
+    border-color: #bbb;
+    box-shadow: 0 0 3px 1px #ddd inset;
+	}
+
+.aboutWrapper .placeholder,
+textarea .placeholder {
+    color: #aaa;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    font-family: "proxima-nova-n4", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+.aboutWrapper textarea,
+.aboutWrapper select {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    background: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+	}
+
+.aboutWrapper textarea {
+    height: 10.5em;
+    margin-bottom: 10px
+	}
+
+.aboutWrapper select {
+    width: 620px !important;
+    padding-right: 25px
+	}
+
+.customSelect {
+    display: inline-block;
+    width: 620px;
+    margin-bottom: 20px;
+    padding: 9px 35px 8px 15px;
+    color: #aaa;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background: url('images/down-sprite-01.png') no-repeat right top white;
+    border: 1px solid #DDD;
+	}
+
+.aboutWrapper input.email,
+.aboutWrapper input.tel {
+    display: inline-block;
+    width: auto
+	}
+
+.aboutWrapper input.email {
+    width: 62%;
+    margin-right: 2%
+	}
+
+.aboutWrapper input.tel { width: 35% }
+
+.aboutWrapper .submit {
+    position: relative; float: right;
+    height: 24px !important;
+    margin-top: 10px;
+    padding: 0 2em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+    font-family: 'icons' !important;
+    border: none;
+    line-height: 1;
+    vertical-align: top;
+    font-family: 'proxima-nova' !important;
+    background: #666;
+	}
+
+.aboutWrapper .submit:hover {
+    color: #fff;
+    background: #e21005;
+    cursor: pointer;
+	}
+
+.aboutWrapper #name,
+.aboutWrapper #company,
+.aboutWrapper #email,
+.aboutWrapper #tel {
+    float: left;
+    width: 48.5%
+	}
+
+.aboutWrapper #email,
+.aboutWrapper select { clear: both }
+
+.aboutWrapper #name,
+.aboutWrapper #email { margin-right: 3% }
+
+.clearBreak {
+    display: block; float: none;
+    width: 100%; height: 1px;
+    clear: both
+	}
+
+/* about.css - styles for the about, contact, and other non-product pages */
+
+/* =======================================
+CONTACT PAGE
+======================================= */
+
+#header { position: relative }
+
+#main { padding-top: 0 }
+
+#container {
+    width: 958px;
+    margin: auto
+	}
+
+/* ===
+LOCATIONS
+*
+* div.top.col3
+* 	div.col.col1-3
+*		ul.contactLocations
+*			h3
+*			3*li (br, em, a.mapLink)
+*
+=== */
+
+.contactHeader {
+    padding-bottom: 6px;
+    border-bottom: 1px solid #fff
+	}
+
+.contactLocations {
+    display: block;
+    padding: 20px 30px 10px;
+    color: #555;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: .1em;
+    background: #fff;
+    line-height: 1.5;
+	}
+
+	.contactLocations .location {	 margin-bottom: 5px }
+
+	.contactLocations em {
+	    font-weight: 600;
+	    font-style: italic;
+	    font-family: "proxima-nova-i6", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+	.contactLocations h3 {
+	    margin-bottom: 2em;
+	    color: #222;
+	    font-size: 13px; font-weight: 600;
+	    text-transform: uppercase;
+	    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+.mapLink {
+    position: static; display: block;
+    width: 4em;
+    margin: 5px 0 20px; padding: 2px;
+    color: white;
+    font-size: 12px; font-weight: 400;
+    text-align: center; text-decoration: none; text-transform: uppercase;
+    font-family: "proxima-nova-n4", "proxima-nova", "Century Gothic", sans-serif;
+    background: #aaa;
+	}
+
+.mapLink:hover {
+    color: #fff;
+    background: #e21005
+	}
+
+/* }}} */
+
+/* {{{ Show Rooms
+===
+SHOWROOMS
+=== */
+
+#showrooms h2 {
+    position: relative;
+    width: 100%;
+    margin: 60px 0 10px;
+    border-top: 1px solid #cfcfcf;
+    font-size: 15px;
+    clear: both
+	}
+
+	#showrooms h2 span {
+	    position: relative;
+	    top: -.5em;
+	    padding: 2px 10px 2px 0;
+	    color: #111;
+	    font-size: 15px; font-weight: 600;
+	    letter-spacing: 1px;
+	    z-index: 1;
+	    background: #EDEDED;
+	    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif;
+	    text-shadow: 0px 2px 1px white;
+		}
+
+.loc {
+    position: relative; display: block;
+    margin-bottom: 25px
+	}
+
+.locTitle {
+    position: absolute; display: block;
+    top: 20%;
+    width: auto;
+    padding: 1em 4em 1em 2em;
+    color: white;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 1px;
+    background: black;
+    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif;
+	}
+
+/* }}} */
+
+/* ABOUT PAGE */
+
+/* {{{ Subnav
+===
+SUBNAV
+=== */
+
+.subNav {
+    display: block;
+    padding-bottom: 15px;
+    margin: 25px 0 10px;
+    border-bottom: 1px solid white;
+    clear: both
+	}
+
+	.subNav .current {
+	    font-weight: 700;
+	    font-family: "proxima-nova-n7", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+	.subNav li {
+	    display: inline-block;
+	    list-style: none
+		}
+
+	.subNav li:first-child a {
+	    padding-left: 0;
+	    border-left: none
+		}
+
+	.subNav a {
+	    display: block;
+	    padding: 0 6px;
+	    color: #222;
+	    border-left: 1px solid #AAA;
+	    font-size: 12px;
+	    text-decoration: none; text-transform: none;
+	    letter-spacing: 1px
+		}
+
+	.subNav a:hover {	 color: #e21005 }
+
+/* }}} */
+
+.aboutWrapper .lCol,
+.aboutWrapper .rCol {
+    width: 49%;
+    padding: 2em 3em 2em 0
+	}
+
+.aboutWrapper .rCol { padding-top: 60px }
+
+.col h2 {
+    margin-bottom: 30px;
+    font-weight: 400;
+    text-transform: none;
+    font: 21px/38px 'proxima-nova';
+    font-family: "proxima-nova-n4", "proxima-nova", "Century Gothic", sans-serif;
+	}
+
+.rCol h2 {
+    margin-bottom: 0;
+    font-size: 14px; font-weight: 600;
+    text-transform: uppercase;
+    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif;
+    line-height: 25px;
+	}
+
+.clientQuotes {
+    width: 100%; min-height: 280px;
+    padding: 1em 3em;
+    background: white;
+    clear: both;
+    font: 19px/31px;
+	}
+
+	.clientQuotes .source {
+	    font-size: 25px; font-weight: 300;
+	    font-style: italic;
+	    font-family: "proxima-nova-i3", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+	.clientQuotes .source:before {	 content: "– " }
+
+	.clientQuotes .source span {
+	    display: block;
+	    margin-left: 25px;
+	    font-size: 13px; font-weight: 600;
+	    font-style: normal;
+	    text-transform: uppercase;
+	    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+	.clientQuotes h3 {
+	    margin-top: 20px; margin-bottom: 30px;
+	    font-size: 13px; font-weight: 600;
+	    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+		}
+
+	.clientQuotes p {
+	    padding: 0 70px;
+	    font-size: 16px;
+	    font-style: italic
+		}
+
+.prevQuote,
+.nextQuote {
+    position: absolute; display: block;
+    top: 45%; left: 0;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 16px;
+    background: silver;
+    cursor: pointer;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+	}
+
+.prevQuote:hover,
+.nextQuote:hover { background: #e21005 }
+
+.nextQuote {
+    right: 0; left: auto
+	}
+
+/* {{{ Press Page
+=======================================
+PRESS PAGE
+=======================================
+*/
+
+.pressclip {
+    display: block;
+    list-style: none;
+    overflow: hidden;
+	}
+
+	.pressclip .getPdf {
+		position: relative;
+		display: block;
+		height: 280px;
+		text-align: center;
+		background:#ccc;
+		overflow: hidden;
+		box-shadow:0 1px 1px 1px transparent;
+		-moz-transition:0.3s linear all;
+		-webkit-transition:0.3s linear all;
+		transition:0.3s linear all;
+		}
+
+	.pressclip .getPdf:hover {
+		box-shadow:0 1px 1px 1px #fff, inset 0 1px 4px 1px #aaa;
+	}
+
+	.pressclip > img,
+	.pressclip .getPdf {
+	    float: left;
+	    margin: 0 15px 15px;
+	    border-radius:2px;
+		}
+
+		.pressclip > img {  vertical-align: top; height:280px; width:auto;  }
+
+		.pressclip .getPdf img {
+			opacity:1;
+			-moz-transition:0.3s linear all;
+			-webkit-transition:0.3s linear all;
+			transition:0.3s linear all;
+		}
+
+		.pressclip .getPdf:hover img { opacity:0.18; }
+
+			.pressclip .hasPdf {
+				opacity: 0; z-index: 10;
+				position: absolute;
+				text-align: center;
+				font-family:'proxima-nova';
+				font-size: 10px; line-height: 8px; letter-spacing: 1px;
+				color: #E21005;
+				background: #fff;
+				background: rgba(255, 255, 255, 0.9);
+				display: block;
+				top: 50%; left: 35%; right:35%;
+				margin-top: -40px;
+				border-radius: 4px; border:2px solid white;
+				box-shadow:0 3px 2px -1px #999;
+				height: 80px; padding-top: 10px;
+				-moz-transition:0.3s all;
+				-webkit-transition:0.3s all;
+				transition:0.3s all;
+				}
+
+			.pressclip .hasPdf:before {
+				font-size:46px;
+				line-height:53px;
+				letter-spacing:0;
+				 }
+
+
+		.pressclip .getPdf:hover .hasPdf {
+			opacity:1;
+			 }
+
+	.pressclip .nopubDate {
+	    display: block;
+	    width: 100%;
+		}
+
+	.pressclip .pubDate,
+	.pressclip .nopubDate {
+	    color: #222;
+	    font-size: 13px !important
+		}
+	.pressclip .title {
+	    width: auto;
+	    padding: 1em 0 0;
+	    font-size: 14px; font-weight: 600;
+	    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif;
+	  /*  position:relative;
+	    clear: none;*/
+		}
+
+	.pressclip .link {
+	    color: #e21005;
+	    border-bottom: 1px dotted
+		}
+
+		.pressclip .link:before {
+		    display: block;
+		    width: 100%; height: 1px;
+		    margin: 1em 0 0;
+		    content: ''
+			}
+
+	.pressclip p {
+	    text-transform: none;
+	    font: 13px/20px 'proxima-nova' !important;
+	    font-family: "proxima-nova-n4", "proxima-nova", "Century Gothic", sans-serif;
+		}
+
+		.pressclip p strong {
+		    font-weight: 600;
+		    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+			}
+
+		.pressclip p em {
+		    font-style: italic !important;
+		    font-family: "proxima-nova-i4", "proxima-nova", "Century Gothic", sans-serif
+			}
+
+		.pressclip p a { color: #e21005 }
+
+	.aboutWrapper .pressCol:nth-child(2n + 1) { clear:both; }		
+
+/* }}} */
+
+/* {{{ 404 Page
+=======================================
+404 PAGE
+=======================================
+*/
+
+.sidebar404,
+.sidebarAbout {
+    width: 90%;
+    margin-left: -2em;
+    padding: 2em;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: white;
+    line-height: 19px;
+	}
+
+.error404Wrapper {
+    margin-top: 1em;
+    border-top: 1px solid white
+	}
+
+.error404 h2 {
+    padding-top: 1em;
+    font-size: 21px; font-weight: 600;
+    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+.error404 .col2-3 p,
+.error404 li {
+    color: #222;
+    font-size: 13px;
+    text-transform: none;
+    line-height: 17px
+	}
+
+.error404 li {
+    min-height: 25px;
+    margin-left: 2em;
+    text-indent: .5em;
+    list-style: disc
+	}
+
+#search404 {
+    display: block; float: none;
+    width: 100%;
+    text-align: left;
+    clear: both;
+    overflow: hidden;
+	}
+
+	#search404 .submit {
+	    float: left;
+	    top: 0;
+	    margin-top: 0;
+	    padding: 0
+		}
+
+	#search404 .text {
+	    float: left;
+	    width: 60%;
+	    margin-bottom: 5px; margin-left: 1em;
+	    vertical-align: top
+		}
+
+	#search404 div,
+	#search404 form {	 display: inline }
+
+/* }}}*/
+
+/* {{{ Policies & FAQ
+=======================================
+POLICIES & FAQ
+=======================================
+*/
+
+.sidebarAbout {
+    width: 90%;
+    margin-left: -2em;
+    padding: 2em;
+    font-size: 13px;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+    background: white;
+    line-height: 19px;
+	}
+
+.policiesWrapper {
+    margin-top: 1em;
+    border-top: 1px solid white
+	}
+
+.policies h2 {
+    padding-top: 1em;
+    font-size: 21px; font-weight: 600;
+	font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif;
+	}
+
+.policies .col2-3 p,
+.policies li {
+    color: #222;
+    font-size: 13px;
+    text-transform: none;
+    line-height: 18px;
+	}
+
+.policies li:hover { background: white }
+
+.policies li {
+    margin-left: 0;
+    padding: .75em 1em;
+    text-indent: 0;
+    list-style: none
+	}
+
+  .policies ol li {
+    list-style:inside decimal;
+    background:none;
+  }
+
+.policies h3 {
+    padding-bottom: 1em;
+    font-weight: 600;
+    font-style: italic;
+    font-family: "proxima-nova-i6", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+.policies h4 {
+    margin-bottom: 1em;
+    font-size: 13px; font-weight: 600;
+    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+#policiesAbout p { font-size: 13px }
+
+/* }}} */
+
+/* {{{ Testimonials */
+.testimonials h2{
+    margin-bottom: -22px;
+    font-weight: 400;
+    text-transform: none;
+    font: 21px/38px 'proxima-nova';
+    font-family: "proxima-nova-n4", "proxima-nova", "Century Gothic", sans-serif;
+    padding:0;
+}
+.testimonials .col{
+    display: table-cell;
+    vertical-align: top;
+    padding:5px 0;
+    width:478px;
+}
+.testimonials .col.col1{
+    padding-right:10px;
+}
+.testimonials .col .clientQuotes{
+    min-height:297px;
+    padding:2em;
+}
+.testimonials .col .clientQuotes p{
+    padding:1em 2em 0;
+}
+
+.testimonials .col .clientQuotes p.source{
+    font-size:16px;
+}
+.testimonials .col .clientQuotes p.source span{
+    font-size:12px;
+    margin-left:13px;
+}
+.testimonialsWrapper {
+    margin-top: 1em;
+    border-top: 1px solid white
+	}
+/* }}} */
+
+/* {{{ Sitemap Page
+=======================================
+SITEMAP PAGE
+=======================================
+*/
+
+.sitemap .pageHeader {
+    margin-bottom: 2em;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white
+	}
+
+.sitemap ul {  }
+
+.topLevel {
+    display: inline-block;
+    margin-right: 2%
+	}
+
+	.topLevel > a {
+	    display: block;
+	    margin-bottom: 8px;
+	    padding: 3px 10px;
+	    color: #222;
+	    font-weight: 300 !important;
+	    letter-spacing: 2px;
+	    background: white;
+	    font: 15px/25px 'proxima-nova';
+	    font-family: "proxima-nova-n3", "proxima-nova", "Century Gothic", sans-serif;
+	    -webkit-transition: 0.3s all;
+	    transition: 0.3s all;
+		}
+
+	.topLevel > a:hover {
+	    color: #fff;
+	    font-weight: 300;
+	    background: #e21005
+		}
+
+.sitemapWrapper a {
+    display: block;
+    color: #222
+	}
+
+.sitemapWrapper a:hover {
+    font-weight: 600;
+    font-family: "proxima-nova-n6", "proxima-nova", "Century Gothic", sans-serif
+	}
+
+.sitemapWrapper ul li {
+    width: 22%;
+    padding-bottom: 2em;
+    vertical-align: top
+	}
+
+	.sitemapWrapper ul li li {
+	    float: none;
+	    width: 100%;
+	    padding: 0;
+	    font-weight: 400;
+	    text-indent: 1em; text-transform: none;
+	    font: 12px/19px 'proxima-nova'
+		}
+
+		.sitemapWrapper ul li li li { text-indent: 30px }
+
+.sitemapWrapper .levelThree { text-indent: 30px }
+
+/* }}} */
+
+/* {{{ nav box on homepage
+=======================================
+nav box on homepage
+=======================================
+*/
+
+#enter {
+    position: absolute; display: none;
+    right: 0; bottom: 0; left: 958px;
+    width: 230px; height: 120px;
+    margin-top: -120px;
+    padding: 10px;
+    color: #fff;
+    overflow: visible !important;
+    background: #e21005;
+    opacity: 0.98;
+    z-index: 100;
+/*    -webkit-transition: 0.5s ease all;
+    transition: 0.5s ease all;*/
+	}
+#enterControl, #enterControl span { cursor:pointer;}
+
+#enterControl {
+    position: absolute; display: block;
+    top: -25px; right:0;
+    width: 40px; height: 25px;
+    padding: 0 8px;
+    color: white;
+    font-size: 20px;
+    background: #e21005;
+    line-height: 30px;
+    font-family: 'icons';
+    background-color:#e21005;
+    -webkit-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+    text-align:center;
+    opacity:1;
+	}
+
+  #enterControl span { margin:auto; }
+
+   #enterControl:hover {
+    background-color:#FF4F48;
+  }
+
+#enterContents {
+    position: absolute;
+    top: 0; right: 0; left: 0;
+    padding: 0 10px 10px;
+    letter-spacing: 1px;
+	}
+
+#enterNav {
+    float: left;
+  top: 0;
+  left: 0;
+  right: auto;
+  margin-left:-10px;
+  padding-bottom: 1em;
+  text-align: right;
+  cursor: pointer;
+  }
+
+	#enterNav a {
+	    display: block; float: left;
+	    padding: 6px 10px;
+	    border: 1px solid #FF9191;
+	    border-style: none solid solid none;
+      background-color:#e21005;
+      -webkit-transition: 0.2s linear all;
+      transition:0.2s linear all;
+		}
+
+	#enterNav a:hover {
+	    color: #fff;
+	    text-shadow: 0 1px 1px #fff;
+      background-color:#FF262E;
+		}
+
+#enter.down {
+    height: 0;
+    padding: 0 10px;
+	}
+
+	#enter.down #enterContents {
+	    display: none;
+	    height: 0 !important;
+		}
+
+	#enter.down #enterNav {	 display: none }
+
+#slideMeta {
+    padding-left: 1em;
+    text-align: left;
+    clear: both
+	}
+
+	#slideMeta a {
+	    padding-top: 1em;
+	    color: #fff !important;
+	    font-size: 16px; font-weight: 100;
+	    text-align: left;
+	    letter-spacing: 1px;
+	    border: none;
+	    line-height: 17px;
+	    font-family: "proxima-nova-n1", "proxima-nova", "Century Gothic", sans-serif;
+		}
+
+		#slideMeta a span {
+		    display: block;
+		    padding-top: 1em;
+		    font-size: 10px; font-weight: 400;
+		    font-style: italic;
+		    text-transform: none;
+		    line-height: 14px
+			}
+
+/* }}} */
+
+/* {{{ Saved List Functions
+==================================
+SAVED LIST FUNCTIONS
+================================ */
+
+.sendItem {
+    position: relative;
+    top: -10px;
+    padding: 20px 10px 10px;
+    background: #fff
+	}
+
+	.sendItem input[type="text"],
+	.sendItem textarea {
+	    display: block; float: right;
+	    width: 300px;
+	    margin-right: 18px;
+	    padding: 4px 12px;
+	    font-size: 12px; font-weight: 700;
+	    border: 1px solid #ddd;
+	    -webkit-box-shadow: none;
+	    -moz-box-shadow: none;
+	    box-shadow: none;
+	    background: #ededed;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+	    font-family: 'proxima-nova';
+	    clear: both;
+		}
+
+	.sendItem input[type="text"]:focus,
+	.sendItem textarea:focus {	 background: #fff }
+
+	.sendItem .submit {
+	    position: relative;
+	    top: 10px; right: 18px
+		}
+
+#sendListModal {
+    width: 350px;
+    margin: 0 0 0 auto
+	}
+
+.listSending,
+.listSent,
+.productSending,
+.productSent {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+	}
+
+	.listSent .button,
+	.productSent .button {
+	    display: inline-block;
+	    background: #ccc;
+	    margin:0 2px !important;
+		}
+
+	.listSent .button:hover,
+	.productSent .button:hover { background: #e21005 }
+
+	.listSent p,
+	.productSent p {
+	    margin: 60px 40px 10px !important;
+	    font-size: 14px;
+	    text-align: center; text-transform: none
+		}
+
+		.listSent #check,
+		.productSent #check {
+			color: #87C20B;
+			margin-right: 5px;
+			}
+
+.listSent,
+.productSent {
+    z-index: 10;
+    background: #fff;
+	}
+
+/* }}} */
+
+/* {{{ PAGE FOOTER
+=======================================
+PAGE FOOTER
+=======================================
+*/
+
+#footer .gridWrapper {
+    width: 825px;
+    margin-right: 0; margin-left: auto;
+    padding-top: 100px; padding-bottom: 40px;
+    text-align: right; text-transform: uppercase;
+    clear: both;
+    overflow: hidden;
+	}
+
+#footer .quarterCol {
+    width: 24%;
+    margin: 0;
+    text-align: left
+	}
+
+#footer #col4 {
+    margin-left: 0;
+    text-align: right
+	}
+
+#footer .copyright,
+#footer .credits {
+    display: block;
+    padding-bottom: 10px;
+    text-transform: none;
+    letter-spacing: 1px
+	}
+
+#footer li {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    list-style: none;
+    line-height: 2;
+	}
+
+#footer a {
+    color: #222;
+    text-decoration: none
+	}
+
+#footer a:hover { color: #e21005 }
+
+/* }}} */
+
+/* {{{ Admin Login*/
+
+#admin-login {  }
+
+	#admin-login .form_wrapper { margin: 0 240px }
+
+	#admin-login .fields_text,
+	#admin-login .fields_password_sha1 { margin: 3px 0 }
+
+	#admin-login .cancel {	 display: none }
+
+	#admin-login button {
+	    display: inline-block;
+	    margin-top: 10px; margin-left: 0;
+	    padding: 0 10px;
+	    font-size: 10px;
+	    text-decoration: none; text-transform: uppercase;
+	    letter-spacing: 1px;
+	    cursor: pointer;
+	    line-height: 2.5;
+	    background: white;
+	    border: none;
+		}
+
+	#admin-login button:hover {
+	    color: #fff;
+	    background: #e21005
+		}
+
+	#admin-login button span { color: #fff }
+
+	#admin-login button span {
+	    position: relative;
+	    top: 1px;
+	    color: #222;
+		}
+
+	#admin-login button {
+	    color: #222;
+	    background: #fff;
+	    -moz-transition: 0.2s linear all;
+	    -webkit-transition: 0.2s linear all;
+	    transition: 0.2s linear all;
+		}
+
+	#admin-login .label {
+	    display: inline-block;
+	    margin: 0; padding: 0;
+	    font-size: 10px;
+	    text-decoration: none; text-transform: uppercase;
+	    letter-spacing: 1px;
+	    line-height: 2.5;
+	    border: none;
+		}
+
+/* }}}
+{{{ */
+
+
+html, body { min-width:960px; }
+body, #container { width:960px;}
+
+
+@media screen and (max-width:320px) {
+body { margin-left:0; }
+/*#enterControl { top:-50px; height:50px; width:auto; font-size:50px; line-height:60px; padding:0 20px; }*/
+
+#slideshow { left:0; right:0; top:0; bottom:0; min-width:960px;}
+#enter { left: 0; right:0; width:320px; max-width:320px; margin-left:0; position:fixed; }
+/*.press #container, .press #main, .press #header { min-width:320px; width:100%; max-width:320px !important;}
+.press .aboutWrapper .lCol, .press .aboutWrapper .rCol { width:320px; text-align:center;}*/
+.pressclip { text-align:center; }
+.pressclip .title, .pressclip p, .pressclip .link { text-align:left; }
+.pressclip p { margin-left:10px;}
+.pressclip { max-width:320px; min-height:250px; height:auto; }
+.pressclip .getPdf, .pressclip > img { max-width:120px; min-height:none; height:auto; margin:15px 10px 5px 5px;}
+.pressclip img { width:120px; max-width:120px; height:auto; min-height:none;  }
+.press .aboutWrapper {}
+.aboutWrapper .pressCol { height:auto; width:315px; padding:2px; }
+.aboutWrapper .pressCol:nth-child(2n) { clear:none; float:left;}
+.pressclip .getPdf span { left:10px; right:10px; }
+
+.testimonials .col { width: 320px;}
+/*.press .aboutWrapper { max-width:320px; min-width:0; }
+*/
+}
+
+
+/*@media screen and (max-width:480px) and (min-width:321px) {
+#enter { left: 0; width:100%; margin-left:0; position:fixed;}
+
+#slideshow { position:fixed !important; }
+}*/
+
+@media screen and (max-width:950px) {
+	#enter { position:fixed; right:0; left: auto; }
+}

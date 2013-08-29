@@ -1,0 +1,136 @@
+/* about.css - styles for the about, contact, and other non-product pages */
+
+/* =======================================
+CONTACT PAGE
+======================================= */
+
+#header { position:relative;}
+#main { padding-top:0; }
+#container { width: 958px; margin:auto;}
+
+.contactHeader { border-bottom:1px solid #fff; }
+
+/* ===
+LOCATIONS
+*
+* div.top.col3
+* 	div.col.col1-3
+*		ul.contactLocations
+*			h3
+*			3*li (br, em, a.mapLink)
+*
+=== */
+
+
+.contactLocations {
+	display:block;
+	background:#fff;
+	padding:20px 30px 10pxq;
+	font-size:13px;
+	/* line-height:18px; */
+	line-height:1.3;
+	color:#555; 
+		font-family:'proxima-nova';
+	text-transform:none;	
+	letter-spacing:2px;
+	}
+
+	.contactLocations h3 {
+		color:#222;
+		text-transform: uppercase;
+		font-size:15px;
+		font-weight:600;
+		margin-bottom:2em;
+	}
+
+	.contactLocations em {
+		font-weight:600;
+		font-style:italic;
+		}
+
+	.mapLink {
+		font-weight: 400;
+		position: static;
+		padding: 2px;
+		text-transform: uppercase;
+		margin: .8em 0 1.5em;
+		font-size: 12px;
+		color: white;
+		text-decoration: none;
+		background: #aaa;
+		display: block;
+		width: 4em;
+		text-align: center;
+		}
+
+		.mapLink:hover { background: #e21005; color:#fff;}
+
+
+
+/* ABOUT PAGE */
+
+.aboutWrapper .lCol,
+.aboutWrapper .rCol { width:49%; padding: 2em 3em 2em 0; }
+.aboutWrapper .rCol { padding-top:60px;}
+
+
+.col h2 { 
+font-weight:600;
+line-height:25px;
+font-size:14px;
+}
+
+.clientQuotes {
+	background: white;
+	padding: 1em 3em;
+	clear: both;
+	width: 100%;
+	font:19px/31px 'proxima-nova';
+	}
+
+	.clientQuotes h3 {
+		font-weight:600;
+		font-size:13px;
+		margin-bottom:1em;
+	}
+
+	.clientQuotes p {
+		padding:0 2em;
+	}
+
+	.clientQuotes .source:before {
+		content:"– ";
+		margin-left:-1em;
+	}
+
+	.clientQuotes .source {
+		font-size:26px;
+		font-style:italic;
+		font-weight:300;
+		font-family:'proxima-nova';
+	}
+
+	.clientQuotes .source span {
+		display:block;
+		font-size:13px;
+		text-transform:uppercase;
+		font-weight:600;
+		font-style:normal;
+	}
+
+	.prevQuote, .nextQuote {
+		position:absolute;
+		display:block;
+		background:silver;
+		color:#fff;
+		font-size:16px;
+		padding:8px 5px;
+		left:0;
+		top:45%;
+		cursor:pointer;
+		-webkit-transition:0.2s all;
+		transition:0.2s all;
+	}
+
+	.prevQuote:hover, .nextQuote:hover { background: #e21005;}
+		.nextQuote { left:auto; right:0; }

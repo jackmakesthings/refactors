@@ -1,0 +1,41 @@
+/* list-print.css */
+html { background: none #fff; }
+body, #main, #container, #topLogo { background: none #fff; }
+#topNav { display:none; }
+#topLogo img { width:400px; height:auto;}
+.searchBar { display:none; }
+
+.pageHeader h1 { font-size:20px; margin-top:70px; margin-bottom:40px;}
+.itemsCount { display:none; }
+
+.savedItemBox { padding-bottom:20px; background:none; box-shadow:none; border-bottom:1px solid #ddd; position:relative; }
+.savedListBox { display:none; }
+
+.savedItemBox .itemNumber { font-size:15px; }
+.imgBox { overflow:hidden; margin-right:20px; margin-top:-30px;}
+
+.savedItemBox h2 span { display:block; padding-top:5px; }
+
+
+.savedItemBox > .infoColumn {  min-height:180px; }
+.savedItemBox .col3 { display:none; }
+.savedItemBox .col2 { border-right:none;  font-size:13px; padding-top:30px; width:50%;}
+.savedItemBox .col1 { width:48%; padding-top:30px; margin-left:-10px;}
+.savedItemBox .productDescription, .savedItemBox .productDesigner { width:240px; line-height:1.5; float:left; padding-right:0; }
+.listActions { display:none; }
+.savedItemBox .productDetails span.emailLocation { display:block; font-style:normal; font-weight:bold;}
+.locInfo, .locInfo * { font-weight:700; font-weight:bold; font-family:'proxima-nova'; font-size:inherit; line-height:inherit;}
+
+
+.productDetails { display:table; width:100%; }
+.prodInfo {/* float:left; */width:60%; display:table-cell;vertical-align:middle;}
+.locInfo { /*float:none; margin-left:40%;*/ display:table-cell; vertical-align:middle;}
+.locLabel { display:none; }
+.savedItemBox .locPhone { margin-left:0; }
+
+.imgBox { height:200px; width:200px; margin-left:-20px;}
+.listImage, .savedItemBox img { max-height:100%; max-width:100%;  }
+.savedItemBox .col2 { border:none; }
+#footer, #mainFooter { display:none; }
+
+/*#footer { display:none; }*/

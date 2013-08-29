@@ -1,0 +1,31 @@
+PROXIMA NOVA
+thin = 100
+light = 300
+regular = 400
+semibold = 600
+bold = 700
+
+
+COLORS
+background = ededed
+main red = e21005
+
+button gray (see: contact page) = 999999
+light gray text = 4d4d4d
+dark gray text = 231f20
+
+
+ELEMENTS
+text (base) -- proxima-nova 400 12-13px / 20px
+text (nav) -- proxima-nova 400 10px -- check spacing/caps
+h1 -- proxima-nova 300 38px caps
+h2 (product name, saved item name, etc) -- proxima-nova 400 18px caps
+most margins -- 10/15/25px
+
+grid/wrapper -- 958 px 
+product thumbnail (category/search) -- 232 x 232 px
+buttons --
+	proxima-nova 300 10px/25px 333333
+	margin (vertical spacing) = 10px
+	height = 25px (check, may vary)
+	hover = e21005 / fff

@@ -1,0 +1,14 @@
+#AuthName "Restricted Area" 
+#AuthType Basic 
+#AuthUserFile /home/sacftp/.htpasswd 
+##AuthGroupFile /dev/null 
+#require valid-user
+
+RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^spudandchloe.com [NC] 
+#RewriteRule ^(.*)$ http://www.spudandchloe.com/$1 [L,R=301]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [L,QSA]
