@@ -1,0 +1,32 @@
+%has-overlay {
+	position:relative;
+	overflow:hidden;
+}
+
+%is-overlay {
+	position:absolute;
+	width:100%;
+	@include transparent;
+}
+
+%active-overlay {
+	@include opaque;
+}
+
+.products, .thumbs {
+	a {  
+		@extend %has-overlay; 
+		div { 
+			@extend %is-overlay; 
+			height:40%;
+			top:60%;
+			z-index:10;
+			color:white;
+			padding:20px;
+		}
+		&:hover div {
+			@extend %active-overlay;
+			background:$overlay-bg;
+		}
+	}
+}

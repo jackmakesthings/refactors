@@ -1,0 +1,17 @@
+@function em($px, $base:13){
+    @return ($px/$base)+0em;
+}
+
+@mixin clear {
+	&:after {
+		content:"";
+		display:table;
+		width:100%;
+	}
+}
+
+@mixin clearest {
+	clear:both;
+	float:none;
+	@include clear;
+}

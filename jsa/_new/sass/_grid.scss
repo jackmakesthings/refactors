@@ -1,0 +1,39 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+@include border-box-sizing;
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 12;
+$column-width   : 70px;
+$gutter-width   : 8px;
+$grid-padding   : 8px;
+
+$show-grid-backgrounds  : true;
+
+
+.page {
+	margin:auto;
+	position:relative;
+}
+
+.row, %row {
+	@include container;
+	@include susy-grid-background;
+}
+.omega { @include omega; }
+
+.quarter, %three {
+	@include span-columns(3,12);
+	position:relative;
+	@include nth-omega(4n);
+}
+
+.five, %five { @include span-columns(5,12); }
+.seven, %seven { @include span-columns(7,12); }
+
+.block, %block {
+	// display:block;
+}

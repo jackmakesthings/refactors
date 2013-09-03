@@ -1,0 +1,33 @@
+- var primary = ['Lighting', 'Seating', 'Tables', 'Case Pieces', 'Screens'. 'Mirrors', 'Accessories']
+- var secondary = ['About', 'Contact']
+!!!
+html
+  body
+    header.site-header
+      a.logo(rel="", href="", title="") John Salibello
+      nav.site-nav
+        ul.primary.menu(role="")
+        each p in primary
+          li
+            a(href=p, rel="")= p
+            ul.sub-menu
+              li
+                a(href="", rel="") Sublink
+        ul.secondary.menu(role="")
+        each s in secondary
+          li
+            a(href=s, rel="")= s
+    main.slideshow
+      ul.slides 
+        li.slide: img(src="", alt="", title="")
+      section.slide-details
+        button.toggle.closed(role="")
+        div.slide-info
+          menu.slide-controls(role="")
+            button.prev(rel="prev")
+            button.next(rel="next")
+          h1.slide-title Brutalist Wall Applique
+          span.slide-text
+            | This is the text
+
+

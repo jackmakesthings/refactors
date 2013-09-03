@@ -7,27 +7,26 @@
 
 <div class="singleProduct">
     <h1 class="productTitle">
-        <?php echo $product['title'];?> <span class='byDesigner'><?php echo $product['by_designer'];?></span>
+        <?php echo $product['title'];?> 
+        <span class='byDesigner'><?php echo $product['by_designer'];?></span>
     </h1>
     <div class="productNav">
-        <a href="<?php echo $prev_slug;?>" class="button paginationControl prev" title="Previous"><span data-icon="L" aria-hidden="true"></span> Prev</a>
-        <a href="<?php echo $next_slug;?>" class="button paginationControl next" title="Next">Next <span data-icon="R" aria-hidden="true"></span></a>
+        <a href="<?php echo $prev_slug;?>" class="button paginationControl prev" title="Previous">
+            <span data-icon="L" aria-hidden="true"></span> Prev
+        </a>
+        <a href="<?php echo $next_slug;?>" class="button paginationControl next" title="Next">
+            Next <span data-icon="R" aria-hidden="true"></span>
+        </a>
     </div>
 
     <div class="productWrapper">
         <div class="productImages">
             <?php
-            $single = count($product['images']) > 1 ? '' : 'single';
-            // $single = ''; ?>
+            $single = count($product['images']) > 1 ? '' : 'single'; ?>
             <div id="controls"></div>
             <?php
-
-            // $sizes = FileManager::get_image_sizes();
-            // var_dump($sizes);
-
             $large = array();
             $small = array();
-
             $i = 1;
             foreach($product['images'] as &$path) :
                 $src = $path;
@@ -37,10 +36,6 @@
 
                 list($width, $height) = getimagesize("http://".$_SERVER['HTTP_HOST'] . $srclg);
                 
-
-                // $large[] = '<a rel="showTitle: false, position: \'inside\', useZoom: \'pattern-image-zoom\', smallImage: \''.$srclg.'\'" class="cloud-zoom-gallery" href="'.$src.'"><img class="product_img" src="'.$srclg.'" alt=""></a>';
-                // $small[] = '<img data-id="' . $i . '" class="" src="'.$srcthumb.'">';
-
                 if( ($width < 595) && ($height < 595) ) { 
                     // if there is no need to zoom
 
@@ -56,8 +51,6 @@
 
                 }
 
-                // $large[] = '<a rel="showTitle: false, position: \'inside\', useZoom: \'pattern-image-zoom\', smallImage: \''.$path.'\'" class="cloud-zoom-gallery" href="'.$path.'"><img src="'.$path.'" alt=""></a>';
-                // $small[] = '<img data-id="' . $i . '" class="" src="'.$path.'">';
             $i++; unset($width); unset($height);
 
             endforeach;
@@ -85,22 +78,22 @@
         <div class="productInfo">
             <aside class="productDescription"><?php echo $product['desc']; ?></aside>
             <?php if (!is_null($product['designer'])): ?>
-                <hr /><aside class="productDesigner"><span>Designer</span><br><?php echo $product['designer']; ?></aside>
+                <hr /><aside class="productDesigner"><span>Designer</span><br>
+                <?php echo $product['designer']; ?></aside>
             <?php endif; ?>
             <hr />
             <aside class="productDetails">
-                <?php foreach($product['details'] as $key => &$detail): ?>
-                    <?php if($key === 'moredims'):?>
-                        <?php foreach($detail as &$dim):
+            <?php foreach($product['details'] as $key => &$detail): 
+                    if($key === 'moredims'):
+                        foreach($detail as &$dim):
                             if( ($key = deka('', $dim, 'key', 0))
                                 && ($val = deka('', $dim, 'data', 0))): ?>
                                 <div class="detailBlock">
-                                <!-- <span><php echo ucfirst($key); ?>:</span> <php echo $val; ?> -->
                                 <?php echo $val . '" ' . strtolower($key); ?>
                                 </div>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php else: ?>
+                            <?php endif;
+                            endforeach;
+                        else: ?>
                     <div><span><?php echo $key; ?>:</span> <?php echo $detail; ?></div>
                     <?php endif;?>
                 <?php endforeach;?>

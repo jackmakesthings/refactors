@@ -1,0 +1,39 @@
+body {
+	font-family: $sans;
+	font-size:100%;
+	line-height:1.54;
+	text-transform:uppercase;
+	letter-spacing:.08em;
+	background:$body-bg;
+}
+
+.page {
+	width:1000px;
+	font-size:em(13,16); 
+	margin:auto;
+}
+
+ul, li {
+	list-style:none;
+}
+
+ul { padding-left:0; }
+
+img,a {
+	max-width:100%;
+}
+
+a { 
+	text-decoration: none;
+	color:inherit;
+}
+
+.overlay {  }
+
+.sub-menu { 
+	position:absolute;
+	display:none; 
+}
+:hover > .sub-menu { 
+	display:block; 
+}
